@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Montserrat", sans-serif;
+  
+  --color-brand-forest: #1A3325;
+  --color-brand-bronze: #C49473;
+  --color-brand-sapphire: #1C4375;
+  --color-brand-cream: #EAE4D8;
+  --color-brand-whatsapp: #25D366;
+  
+  --color-corporate-blue: #1A3325;
+  --color-corporate-gold: #C49473;
+  --color-corporate-bronze: #C49473;
+  --color-corporate-neutral: #F5F1ED;
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 8px 32px -2px rgba(26, 51, 37, 0.1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    color: #3d3d3d;
+    background-color: var(--color-corporate-neutral);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-brand-forest);
+  }
+  
+  h1 {
+    color: var(--color-brand-bronze);
+  }
+  
+  a {
+    color: var(--color-brand-sapphire);
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--color-brand-bronze);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    color: white;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-radius: 0.5rem;
+    background-color: var(--color-brand-forest);
+    box-shadow: var(--shadow-soft);
+    border: 2px solid var(--color-brand-forest);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-brand-sapphire);
+    border-color: var(--color-brand-sapphire);
+    box-shadow: var(--shadow-premium);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:focus {
+    outline: 2px solid var(--color-brand-bronze);
+    outline-offset: 2px;
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    border-color: var(--color-brand-forest);
+    color: var(--color-brand-forest);
+    background-color: transparent;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--color-brand-forest);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline:focus {
+    outline: 2px solid var(--color-brand-bronze);
+    outline-offset: 2px;
+  }
+  
+  .btn-outline:active {
+    transform: scale(0.98);
+  }
+  
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: 600;
+    color: white;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-radius: 50%;
+    background-color: var(--color-brand-whatsapp);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    border: none;
+  }
+  
+  .btn-whatsapp:hover {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+    transform: scale(1.1);
+  }
+
+  .btn-whatsapp:focus {
+    outline: 2px solid var(--color-brand-forest);
+    outline-offset: 2px;
+  }
+  
+  .btn-whatsapp:active {
+    transform: scale(0.98);
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
+    transition-property: all;
+    transition-duration: 300ms;
+    border-width: 1px;
+    border-color: #e5ddd1;
+  }
+
+  @media (min-width: 640px) {
+    .card {
+      padding: 2rem;
+    }
+  }
+  
+  .card:hover {
+    box-shadow: var(--shadow-premium);
+    transform: translateY(-4px);
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #e5ddd1;
+    padding: 1rem 0;
+  }
+  
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+  
+  .faq-button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-brand-cream);
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5ddd1;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-brand-forest);
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .faq-button:hover {
+    background-color: #f5f0eb;
+    border-color: var(--color-brand-bronze);
+  }
+  
+  .faq-button:focus {
+    outline: 2px solid var(--color-brand-sapphire);
+    outline-offset: 2px;
+  }
+  
+  .contrast-text {
+    color: var(--color-brand-cream);
+  }
+  
+  .text-link {
+    color: var(--color-brand-sapphire);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  
+  .text-link:hover {
+    color: var(--color-brand-bronze);
+  }
+}
